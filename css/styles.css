@@ -8,6 +8,50 @@
     padding: 6rem 2rem 4rem;
 }
 
+/* CSS for the Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.hamburger-menu {
+    display: none; /* Hide on desktop */
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show on mobile */
+    }
+    .nav-menu {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    .nav-menu.active {
+        display: flex; /* Show nav links when active */
+    }
+}
+
 .hero-container {
     display: flex;
     /* Aligns children (hero content and stats) side-by-side */
