@@ -102,3 +102,11 @@ const navMenu = document.getElementById('nav-menu');
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
+
+const hamburgerButton = document.getElementById('hamburger-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  hamburgerButton.classList.toggle('active');
+});
