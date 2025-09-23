@@ -70,7 +70,7 @@
     /* Arrange stat items in a row on mobile */
     justify-content: space-around;
     align-items: center;
-    background-color: #b7bd12e8;
+    background-color: #9da20de8;
     /* A light background color for the stats */
     padding: 20px 0;
 }
@@ -104,6 +104,7 @@
         /* Arrange items horizontally on desktop */
         justify-content: space-between;
         align-items: center;
+        height: 100%;
     }
 
     .hero-content {
@@ -135,6 +136,55 @@
 
     .stat-box {
         font-size: 1.2em;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile-First Styles (default)                                              */
+/* -------------------------------------------------------------------------- */
+.nav-links {
+    display: flex;
+    /* Display links in a flex container */
+    flex-direction: column;
+    /* Stack links vertically by default */
+    align-items: center;
+    /* Center the links horizontally */
+    padding: 20px 0;
+    /* Add some space above and below the links */
+    width: 100%;
+    /* Take up the full width */
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #333;
+    /* Default link color */
+    padding: 10px 0;
+    /* Add padding to each link */
+    font-size: 1.2em;
+    width: 80%;
+    /* Give each link a set width */
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop Styles (min-width: 768px)                                          */
+/* -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .nav-links {
+        flex-direction: row;
+        /* Arrange links horizontally on desktop */
+        justify-content: flex-end;
+        /* Align links to the right */
+        align-items: center;
+    }
+
+    .nav-links a {
+        padding: 0 15px;
+        /* Add horizontal spacing between links */
+        width: auto;
+        /* Allow links to take up only necessary space */
     }
 }
 
