@@ -1,0 +1,828 @@
+﻿
+/* General Styles */
+
+.page-header {
+    background-color: #937b1d;
+    color: #ffffff;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+}
+
+#our-story, #mission-vision, #core-values, #thematic-areas, #contact-info, #contact-form {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+
+}
+
+#mission-vision {
+    background-color: #f8f8f8;
+    text-align: left;
+
+    padding: 4rem 2rem;
+}
+
+.mission-vision-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+}
+
+.mv-item {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    flex: 1 1 45%;
+    flex-basis: 48%; /* Adjust for spacing */
+}
+.mv-item h3 {
+    color: #000080;
+    margin-bottom: 1rem;
+}
+#programs h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#programs p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.program-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.program-item .icon-box {
+    margin-bottom: 1.5rem;
+}
+
+.program-item h3 {
+    color: #000080;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.program-item p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+#core-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+#core-values li {
+    background-color: #f8f8f8;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+}
+#core-values li::before {
+    content: "✔";
+    color: #228b22;
+    margin-right: 0.5rem;
+}
+#latest-updates {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8f8;
+    /* A light background to make the section stand out */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.update-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.update-item {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+    /* Ensures the image doesn't break the border-radius */
+}
+
+.update-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.update-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Ensures the image fills the space without distortion */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.update-item h3 {
+    font-size: 1.25rem;
+    color: #000080;
+    margin: 1rem 1rem 0.5rem;
+}
+
+.update-item p {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0 1rem 1rem;
+}
+
+.update-item {
+    flex-shrink: 0;
+    /* Prevents items from shrinking */
+    width: 300px;
+    /* Gives each item a fixed width for consistent scrolling */
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+}
+
+.update-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    color: #228b22;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.read-more-btn:hover {
+    color: #000080;
+    text-decoration: underline;
+}
+/* Container for the navigation links */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    /* Spreads the links out with space in between */
+    align-items: center;
+    /* Vertically centers the links */
+    gap: 2rem;
+    /* Creates space between each link */
+}
+
+/* Individual navigation links */
+.nav-item {
+    text-decoration: none;
+    color: #000080;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    /* Adds some vertical space for better clickability */
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #000080;
+    /* Color on hover */
+}
+
+/* Container for the carousel and buttons */
+.updates-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    /* Adds space for the arrows */
+}
+
+/* Horizontal scrolling container */
+.update-grid-container {
+    display: flex;
+    overflow-x: scroll;
+    /* Enables horizontal scrolling */
+    scroll-behavior: smooth;
+    /* Makes scrolling smooth */
+    -webkit-overflow-scrolling: touch;
+    /* Improves scrolling on iOS devices */
+    gap: 2rem;
+    padding-bottom: 20px;
+    /* Prevents scrollbar from covering content */
+}
+
+/* Hides the default scrollbar on modern browsers */
+.update-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styles for the navigation buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #333;
+    z-index: 10;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.left-arrow {
+    left: 1rem;
+}
+
+.right-arrow {
+    right: 1rem;
+}
+
+/* The Donate button styling */
+.nav-item.cta {
+    background: #228b22;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item.cta:hover {
+    background: #000080;
+    /* Darker blue on hover */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* Pushes the logo to the left and links to the right */
+    align-items: center;
+    /* Vertically centers the logo and links */
+    max-width: 1200px;
+    /* Gives the nav bar a defined max-width */
+    margin: auto;
+    /* Centers the nav bar on the page */
+    padding: 0 2rem;
+}
+
+.thematic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.thematic-item {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows the items to stack on smaller screens */
+    gap: 2rem;
+    /* Adds space between the columns */
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+#contact-info,
+#contact-form {
+    flex: 1;
+    /* Allows each section to grow and shrink proportionally */
+    min-width: 300px;
+    /* Prevents the columns from getting too narrow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow to each box */
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+#contact-info {
+    order: 1;
+    /* Ensures the info column comes first on all screen sizes */
+}
+
+#contact-form {
+    order: 2;
+    /* Ensures the form column comes second */
+}
+
+#contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    align-self: flex-start;
+}
+
+.form-note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Add the scroll-to-top button styles */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: hsla(60, 82%, 35%, 0.877);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #000080;
+}
+/* Footer Styling */
+footer {
+    background-color: #333333;
+    /* Dark background similar to the example */
+    color: #ffffff;
+    /* Light text color */
+    padding: 3rem 2rem 1rem;
+    /* Adjust padding as needed */
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Responsive grid for columns */
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separator line */
+}
+
+.footer-column h3 {
+    color: #ffd700;
+    /* Highlight color for headings */
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+}
+
+.footer-about .footer-logo {
+    margin-bottom: 1rem;
+    /* Keep spacing below the logo */
+}
+
+.footer-about .footer-logo img {
+    max-width: 150px;
+    /* Adjust as needed for your logo's size */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensures it takes up its own line and respects margin */
+    /* If you want to center the logo in the column on smaller screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-column ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #000080;
+    /* Highlight color on hover */
+}
+
+.footer-contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    /* Space between icons */
+}
+
+.social-icons img {
+    width: 30px;
+    /* Size of social icons */
+    height: 30px;
+    border-radius: 5px;
+    /* Slightly rounded corners for icons */
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover img {
+    transform: translateY(-3px);
+    /* Subtle hover effect */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: #ffffff;
+    /* Slightly lighter color for copyright */
+    font-size: 1.0em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Stack columns on smaller screens */
+        text-align: center;
+    }
+
+    .footer-about {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center social icons */
+    }
+}
+/* Styling for the slogan on the About page */
+.page-header .slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #fff;
+    margin-top: -1rem;
+    /* Adjusts the spacing from the h1 */
+}
+.two-column-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .two-column-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+#hero {
+    background-color: #937b1d;
+    /* A strong green color */
+    color: #fff;
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.hero-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.organization-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    background: #fff;
+    color: #228b22;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: #eee;
+}
+#mvp-section {
+    background-color: #f4f4f4;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.mvp-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.mvp-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mvp-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: #937b1d;
+    border-radius: 8px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 35px;
+    height: 35px;
+}
+
+.mvp-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    color: #388E3C;
+}
+/* Container for the navigation links */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    /* Spreads the links out with space in between */
+    align-items: center;
+    /* Vertically centers the links */
+    gap: 2rem;
+    /* Creates space between each link */
+}
+
+/* Individual navigation links */
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    /* Adds some vertical space for better clickability */
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #007bff;
+    /* Color on hover */
+}
+
+/* The Donate button styling */
+.nav-item.cta {
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item.cta:hover {
+    background: #0056b3;
+    /* Darker blue on hover */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* Pushes the logo to the left and links to the right */
+    align-items: center;
+    /* Vertically centers the logo and links */
+    max-width: 1000px;
+    /* Gives the nav bar a defined max-width */
+    margin: auto;
+    /* Centers the nav bar on the page */
+    padding: 0 2rem;
+}
+
+/* Container for both logo and nav links */
+nav {
+    display: flex;
+    flex-direction: column;
+    /* Stacks children vertically */
+    align-items: center;
+    /* Centers items horizontally */
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
+
+/* Styles the logo and centers it */
+.logo {
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 1rem;
+    /* Creates space between logo and links */
+}
+
+/* Container for the navigation links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    /* Centers the links horizontally */
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* Allows links to wrap to the next line on small screens */
+}
+
+/* Gallery Page Specific Styles */
+#gallery-page-header {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 6rem 2rem 2rem;
+}
+
+#gallery-page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+#gallery-page-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#photo-gallery {
+    padding: 4rem 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

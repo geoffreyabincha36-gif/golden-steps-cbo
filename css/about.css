@@ -1,0 +1,107 @@
+/* Container for the slider */
+.image-slider-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden; /* Hides parts of images that are outside the container */
+    height: 400px; /* Adjust height as needed for your images */
+}
+
+/* The slider itself */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual slide styling */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+}
+
+/* Make the active slide visible */
+.slide.active {
+    opacity: 1;
+}
+
+/* Optional: Add a subtle overlay for text readability on top of images */
+.image-slider-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+Our team members section
+#our-team {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#our-team .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role {
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    color: #777;
+}

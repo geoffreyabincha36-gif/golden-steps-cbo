@@ -1,0 +1,40 @@
+/* Newsletter and Report Grid Styling */
+
+}
+.newsletter-grid,
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.newsletter-item,
+.report-item {
+    background-color: #f8f8f8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.newsletter-item:hover,
+.report-item:hover {
+    transform: translateY(-5px);
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
