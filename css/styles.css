@@ -8,6 +8,136 @@
     padding: 6rem 2rem 4rem;
 }
 
+.hero-container {
+    display: flex;
+    /* Aligns children (hero content and stats) side-by-side */
+    justify-content: space-between;
+    /* Spreads out the two sections */
+    align-items: center;
+    /* Vertically aligns them */
+    padding: 50px;
+    width: 100%;
+}
+
+/* Style for the main hero text and buttons */
+.hero-content {
+    flex-basis: 60%;
+    /* Gives the hero content 60% of the container's width */
+    padding-right: 100px;
+}
+
+/* Style for the container of the stats boxes */
+.hero-stats {
+    flex-basis: 40%;
+    /* Gives the stats 40% of the container's width */
+    display: flex;
+    flex-direction: column;
+    /* Stacks the stat boxes vertically */
+    justify-content: center;
+}
+
+/* Style for the individual stat boxes */
+.stat-box {
+    background-color: #d8c38a;
+    /* Use the same color as the example */
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Adds space between the stacked boxes */
+    text-align: right;
+    /* Aligns text to the right */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile-First Styles (default)                                              */
+/* -------------------------------------------------------------------------- */
+.hero-container {
+    display: flex;
+    /* Use flexbox for layout */
+    flex-direction: column;
+    /* Stack items vertically by default */
+    padding: 20px;
+}
+
+.hero-content {
+    text-align: left;
+    margin-bottom: 20px;
+    /* Adds space below the hero text on mobile */
+}
+
+.hero-stats {
+    display: flex;
+    flex-direction: row;
+    /* Arrange stat items in a row on mobile */
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b7bd12e8;
+    /* A light background color for the stats */
+    padding: 20px 0;
+}
+
+.stat-box {
+    text-align: center;
+    flex-basis: 30%;
+    /* Gives each stat item a flexible width */
+    max-width: 250px;
+}
+
+.stat-number {
+    font-size: 2em;
+    /* Adjust font size for mobile */
+    font-weight: bold;
+    color: #f8f8f8;
+    align-items: center;
+}
+
+.stat-text {
+    font-size: 0.9em;
+    color: #f8f8f8;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop-First Styles (min-width: 768px)                                    */
+/* -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        /* Arrange items horizontally on desktop */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex-basis: 60%;
+        /* Give the hero content 60% of the space */
+        margin-bottom: 0;
+        /* Remove bottom margin on desktop */
+    }
+
+    .hero-stats {
+        flex-basis: 40%;
+        /* Give the stats 40% of the space */
+        flex-direction: column;
+        /* Stack the stat items vertically on desktop */
+        padding: 0;
+        /* Remove padding on desktop */
+    }
+
+    .stat-box {
+        margin-bottom: 20px;
+        text-align: center;
+        /* Align text to the right for a clean look */
+    }
+
+    .stat-number {
+        font-size: 3em;
+        /* Larger font size for desktop */
+    }
+
+    .stat-box {
+        font-size: 1.2em;
+    }
+}
+
 #our-story, #mission-vision, #core-values, #thematic-areas, #contact-info, #contact-form {
     padding: 4rem 2rem;
     max-width: 900px;
