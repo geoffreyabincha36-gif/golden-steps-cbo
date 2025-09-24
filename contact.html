@@ -9,7 +9,81 @@
 <!-- Tailwind CSS CDN for responsive utilities -->
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-    /* Custom styles for the hamburger menu animation */
+    /* General Body and Main Content Styles */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main-content {
+        padding-top: 4rem;
+        /* Adjust this to prevent content from hiding under the fixed header */
+    }
+
+    /* Header and Navigation Bar */
+    header {
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo img {
+        height: 100px;
+        /* Adjust as needed */
+        width: auto;
+    }
+
+    /* Desktop Navigation Link Styles */
+    #desktop-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #desktop-nav .main-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        /* Add space between links */
+    }
+
+    .nav-item-text {
+        color: #4B5563;
+        /* Tailwind equivalent of text-gray-700 */
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-item-text:hover {
+        color: #15803d;
+        /* Tailwind equivalent of hover:text-green-600 */
+    }
+
+    .nav-item-cta {
+        background-color: #22c55e;
+        /* Tailwind equivalent of bg-green-500 */
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-weight: 700;
+    }
+
+    .nav-item-cta:hover {
+        background-color: #16a34a;
+        /* Tailwind equivalent of hover:bg-green-600 */
+    }
+
+    /* Hamburger Menu and Mobile Navigation */
+    .hamburger-menu {
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
     .hamburger-menu .bar {
         display: block;
         width: 25px;
@@ -30,62 +104,68 @@
     .hamburger-menu.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    /* Mobile Menu Container Styles */
+    #mobile-menu {
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your header's height */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    /* Ensure mobile links are block-level for vertical stacking */
+    #mobile-menu a {
+        text-align: center;
+        padding: 1rem;
+        display: block;
+    }
 </style>
 </head>
 
-<body class="bg-gray-100 font-sans">
-
-    <!-- Header Section with Mobile and Desktop Navigation -->
-    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50">
-        <!-- Logo -->
+<body>
+    <header class="p-4 flex justify-between items-center fixed top-0 w-full z-50">
         <div class="logo">
-            <img src="images/logo.jpeg" alt="Golden Steps logo" width="100" height="100">
+            <img src="Images/logo.jpeg" alt="Logo" class="h-10 md:h-12">
         </div>
 
         <!-- Desktop Navigation -->
-        <nav id="desktop-nav" class="hidden md:flex items-center space-x-6">
-            <a href="index.html"
-                class="nav-item nav-item-text text-gray-700 hover:text-green-600 transition duration-300">Home</a>
-            <a href="about.html"
-                class="nav-item nav-item-text text-gray-700 hover:text-green-600 transition duration-300">About Us</a>
-            <a href="index.html"
-                class="nav-item nav-item-text text-gray-700 hover:text-green-600 transition duration-300">Our
-                Programs</a>
-            <a href="resources.html"
-                class="nav-item nav-item-text text-gray-700 hover:text-green-600 transition duration-300">Resources</a>
-            <a href="contact.html"
-                class="nav-item nav-item-text text-gray-700 hover:text-green-600 transition duration-300">Contact</a>
-            <a href="index.html#donate"
-                class="nav-item nav-item-cta text-white bg-green-500 hover:bg-green-600 transition duration-300 px-4 py-2 rounded-full font-bold">Donate</a>
+        <nav id="desktop-nav" class="hidden md:flex flex-grow items-center justify-center space-x-6">
+            <div class="main-links flex items-center space-x-6">
+                <a href="index.html" class="nav-item-text text-gray-700 hover:text-green-600 font-semibold">Home</a>
+                <a href="about.html" class="nav-item-text text-gray-700 hover:text-green-600 font-semibold">About Us</a>
+                <a href="index.html" class="nav-item-text text-gray-700 hover:text-green-600 font-semibold">Our
+                    Programs</a>
+                <a href="resources.html"
+                    class="nav-item-text text-gray-700 hover:text-green-600 font-semibold">Resources</a>
+                <a href="#blog" class="nav-item-text text-gray-700 hover:text-green-600 font-semibold">Blog</a>
+            </div>
+            <a href="contact.html" class="nav-item-cta">Contact Us</a>
         </nav>
 
         <!-- Mobile Hamburger Button -->
-        <button id="hamburger-button" class="hamburger-menu md:hidden text-gray-600 focus:outline-none z-50">
+        <button id="hamburger-button" class="md:hidden hamburger-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
     </header>
 
-    <!-- Mobile Navigation Menu (Hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-full w-full z-40">
-        <nav class="flex flex-col items-center justify-center p-4 space-y-4">
-            <a href="index.html"
-                class="nav-item text-gray-700 hover:text-green-600 transition duration-300 block p-2">Home</a>
-            <a href="about.html"
-                class="nav-item text-gray-700 hover:text-green-600 transition duration-300 block p-2">About Us</a>
-            <a href="index.html"
-                class="nav-item text-gray-700 hover:text-green-600 transition duration-300 block p-2">Our Programs</a>
-            <a href="resources.html"
-                class="nav-item text-gray-700 hover:text-green-600 transition duration-300 block p-2">Resources</a>
-            <a href="contact.html"
-                class="nav-item text-gray-700 hover:text-green-600 transition duration-300 block p-2">Contact</a>
-            <a href="index.html#donate"
-                class="nav-item cta text-white bg-green-500 hover:bg-green-600 transition duration-300 px-4 py-2 rounded-full font-bold">Donate</a>
-        </nav>
-    </div>
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="hidden flex flex-col items-center pt-20 pb-4">
+        <a href="index.html" class="text-gray-700 hover:text-green-600 font-semibold p-4">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-green-600 font-semibold p-4">About Us</a>
+        <a href="index.html" class="text-gray-700 hover:text-green-600 font-semibold p-4">Our Programs</a>
+        <a href="resources.html" class="text-gray-700 hover:text-green-600 font-semibold p-4">Resources</a>
+        <a href="#blog" class="text-gray-700 hover:text-green-600 font-semibold p-4">Blog</a>
+        <a href="contact.html" class="nav-item-cta p-4 mt-4">Contact Us</a>
+    </nav>
 
-    <main>
+
+    <div id="main-content">
         <section class="page-header">
             <h1>Get in Touch</h1>
         </section>
@@ -177,19 +257,23 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Golden Steps Community-Based Organization. All rights reserved.</p>
+            <p>&copy; 2025 Golden Steps Community-Based Organization. All rights reserved.</p>
             <p><i>Shaping Today for a Better Tomorrow.</i></p>
         </div>
     </footer>
-    <script>
-        const hamburgerButton = document.getElementById('hamburger-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+   iv> <!-- end of main-content container -->
 
-        hamburgerButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            hamburgerButton.classList.toggle('active');
-        });
-    </script>
+<script>
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mainContent = document.getElementById('main-content');
+
+    hamburgerButton.addEventListener('click', () => {
+        hamburgerButton.classList.toggle('active');
+        mobileMenu.classList.toggle('hidden');
+        mainContent.classList.toggle('hidden');
+    });
+</script>
 
     <script src="js/script.js"></script>
     <script src="js/contact-form.js"></script>

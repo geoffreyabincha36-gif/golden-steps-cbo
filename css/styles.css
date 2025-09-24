@@ -8,70 +8,128 @@
     padding: 6rem 2rem 4rem;
 }
 
-/* CSS for the Navigation Bar */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+/* General Body and Main Content Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
 }
+
+#main-content {
+    padding-top: 4rem;
+    /* Adjust this to prevent content from hiding under the fixed header */
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 100px;
+    /* Adjust as needed */
+    width: auto;
+}
+
+/* Desktop Navigation Link Styles */
+#desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#desktop-nav .main-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Add space between links */
+}
+
+.nav-item-text {
+    color: #4B5563;
+    /* Tailwind equivalent of text-gray-700 */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item-text:hover {
+    color: #15803d;
+    /* Tailwind equivalent of hover:text-green-600 */
+}
+
+.nav-item-cta {
+    background-color: #22c55e;
+    /* Tailwind equivalent of bg-green-500 */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 700;
+}
+
+.nav-item-cta:hover {
+    background-color: #16a34a;
+    /* Tailwind equivalent of hover:bg-green-600 */
+}
+
+/* Hamburger Menu and Mobile Navigation */
 .hamburger-menu {
-    display: none; /* Hide on desktop */
     cursor: pointer;
     background: none;
     border: none;
 }
+
 .hamburger-menu .bar {
+    display: block;
     width: 25px;
     height: 3px;
     background-color: #333;
     margin: 5px 0;
+    transition: all 0.3s ease-in-out;
 }
-.nav-menu {
-    display: flex;
-    gap: 1.5rem;
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Container Styles */
+#mobile-menu {
+    position: absolute;
+    top: 60px;
+    /* Adjust based on your header's height */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* Ensure mobile links are block-level for vertical stacking */
+#mobile-menu a {
+    text-align: center;
+    padding: 1rem;
+    display: block;
+}
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
     .hamburger-menu {
-        display: block; /* Show on mobile */
-    }
-    .nav-menu {
-        display: none; /* Hide nav links by default on mobile */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #f1f1f1;
-        text-align: center;
-        padding-top: 1rem;
-    }
-    .nav-menu.active {
-        display: flex; /* Show nav links when active */
+        display: block;
+        /* Show hamburger menu on mobile */
     }
 }
- /* Custom styles for the hamburger menu animation */
- .hamburger-menu .bar {
-     display: block;
-     width: 25px;
-     height: 3px;
-     background-color: #333;
-     margin: 5px 0;
-     transition: all 0.3s ease-in-out;
- }
-
- .hamburger-menu.active .bar:nth-child(1) {
-     transform: translateY(8px) rotate(45deg);
- }
-
- .hamburger-menu.active .bar:nth-child(2) {
-     opacity: 0;
- }
-
- .hamburger-menu.active .bar:nth-child(3) {
-     transform: translateY(-8px) rotate(-45deg);
- }
 
 .hero-container {
     display: flex;
@@ -103,7 +161,7 @@ header {
 
 /* Style for the individual stat boxes */
 .stat-box {
-    background-color: #d8c38a;
+    background-color: #967616;
     /* Use the same color as the example */
     padding: 20px;
     margin-bottom: 20px;
@@ -204,54 +262,10 @@ header {
     }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Mobile-First Styles (default)                                              */
-/* -------------------------------------------------------------------------- */
-.nav-links {
-    display: flex;
-    /* Display links in a flex container */
-    flex-direction: column;
-    /* Stack links vertically by default */
-    align-items: center;
-    /* Center the links horizontally */
-    padding: 20px 0;
-    /* Add some space above and below the links */
-    width: 100%;
-    /* Take up the full width */
-}
-
-.nav-links a {
-    text-decoration: none;
-    /* Remove underline from links */
-    color: #333;
-    /* Default link color */
-    padding: 10px 0;
-    /* Add padding to each link */
-    font-size: 1.2em;
-    width: 80%;
-    /* Give each link a set width */
-    text-align: center;
-}
-
+/* --------------------------------------------------------------------------
 /* -------------------------------------------------------------------------- */
 /* Desktop Styles (min-width: 768px)                                          */
 /* -------------------------------------------------------------------------- */
-@media (min-width: 768px) {
-    .nav-links {
-        flex-direction: row;
-        /* Arrange links horizontally on desktop */
-        justify-content: flex-end;
-        /* Align links to the right */
-        align-items: center;
-    }
-
-    .nav-links a {
-        padding: 0 15px;
-        /* Add horizontal spacing between links */
-        width: auto;
-        /* Allow links to take up only necessary space */
-    }
-}
 
 #our-story, #mission-vision, #core-values, #thematic-areas, #contact-info, #contact-form {
     padding: 4rem 2rem;
