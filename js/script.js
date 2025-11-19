@@ -69,31 +69,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Check if the slider exists on the current page
-  const slides = document.querySelectorAll('.slide');
-  if (slides.length === 0) {
-    return; // Exit if there's no slider on the page
-  }
+ function initImageSlider() {
+            // Check specifically for slides on the current ACTIVE page
+            const activePage = document.querySelector('.page.active');
+            if (!activePage) return;
 
-  let currentSlide = 0;
+            const slides = activePage.querySelectorAll('.slide');
+            
+            // FIX: Ensure the slider elements exist before running the script
+            if (slides.length === 0) {
+                console.log("No slider found on this page.");
+                return; 
+            }
 
-  function showSlide(index) {
-    slides.forEach((slide) => {
-      slide.classList.remove('active');
-    });
-    slides[index].classList.add('active');
-  }
+            let currentSlide = 0;
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
+            // Clear any existing intervals to prevent multiple sliders running simultaneously
+            if (window.sliderInterval) {
+                clearInterval(window.sliderInterval);
+            }
 
-  // Set an interval to change the slide every 4 seconds
-  setInterval(nextSlide, 4000);
+            function showSlide(index) {
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                slides[index].classList.add('active');
+            }
 
-  // Show the first slide initially
-  showSlide(currentSlide);
-});
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Set the interval and store it globally to manage it later
+            window.sliderInterval = setInterval(nextSlide, 4000);
+
+            // Show the first slide initially
+            showSlide(currentSlide);
+        }
+
+        // Initialize the slider when the DOM is fully loaded and only if it's the active page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Attach event listener for mobile menu toggle
+            hamburgerButton.addEventListener('click', () => {
+                hamburgerButton.classList.toggle('active');
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Initial page load switch
+            switchPage('home-page');
+        });
+
+        // Re-initialize slider when the page switches to "About Us"
+        // This is handled inside the switchPage function now.
 
 /* JavaScript to toggle the menu */
 const hamburger = document.getElementById('hamburger');
