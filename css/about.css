@@ -1,11 +1,50 @@
 /* Container for the slider */
-.image-slider-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem auto 2rem;
+/* --- Fix for Stacking Images --- */
+.about-slider-container {
     position: relative;
-    overflow: hidden; /* Hides parts of images that are outside the container */
-    height: 400px; /* Adjust height as needed for your images */
+    width: 100%;
+    /* Maintain height to prevent collapse */
+    height: 400px; 
+}
+
+@media (min-width: 768px) {
+    .about-slider-container {
+        height: 500px;
+    }
+}
+
+.about-slide {
+    /* This is the magic line that stops them from stacking vertically */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide all by default */
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+/* Only the active slide is visible */
+.about-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.about-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures photos aren't stretched */
+    border-radius: 12px;
+}
+
+.image-slider-container {
+   width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden; /* Hides the other images */
+    height: 400px; /* Adjust based on your images */
     border-radius: 0.75rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
@@ -19,14 +58,13 @@
 
 /* Individual slide styling */
 .slide {
-    position: absolute;
+   position: absolute; /* Overlaps images in the same spot */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    object-fit: cover; /* Ensures images fill the container without distortion */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
     z-index: 1;
 }
 
