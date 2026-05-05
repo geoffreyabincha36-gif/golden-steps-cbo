@@ -69,43 +69,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Check if the slider exists on the current page
- function initImageSlider() {
-            // Check specifically for slides on the current ACTIVE page
-            const activePage = document.querySelector('.page.active');
-            if (!activePage) return;
+function initImageSlider() {
+        // Targets the slides within the slider container
+        const slides = document.querySelectorAll('.slide');
+        
+        if (slides.length === 0) {
+            console.log("No slider found on this page.");
+            return;
+        }
 
-            const slides = activePage.querySelectorAll('.slide');
-            
-            // FIX: Ensure the slider elements exist before running the script
-            if (slides.length === 0) {
-                console.log("No slider found on this page.");
-                return; 
-            }
+        let currentSlide = 0;
 
-            let currentSlide = 0;
+        // Clear any existing intervals to prevent overlap
+        if (window.sliderInterval) {
+            clearInterval(window.sliderInterval);
+        }
 
-            // Clear any existing intervals to prevent multiple sliders running simultaneously
-            if (window.sliderInterval) {
-                clearInterval(window.sliderInterval);
-            }
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+        }
 
-            function showSlide(index) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                });
-                slides[index].classList.add('active');
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            // Set the interval and store it globally to manage it later
-            window.sliderInterval = setInterval(nextSlide, 4000);
-
-            // Show the first slide initially
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
+        }
+
+        // Set the interval and store it globally
+        window.sliderInterval = setInterval(nextSlide, 4000);
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+    }
+
+    // Initialize the slider
+    initImageSlider();
+});
         }
 
         // Initialize the slider when the DOM is fully loaded and only if it's the active page
