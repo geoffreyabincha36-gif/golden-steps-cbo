@@ -1,17 +1,26 @@
 /* Video Grid Styling */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+     display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;    
 }
 
 .video-item {
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
+     width: 100%;
+        max-width: 500px; /* Limits the size on large screens */
+        aspect-ratio: 16 / 9; /* Maintains standard widescreen shape */
+        object-fit: cover; /* Prevents stretching */
+        border-radius: 8px;
+        background-color: #000; /* Black bars if video is different shape */
+}
+
+ .video-item p {
+        margin-top: 12px;
+        font-weight: bold;
+        color: #333;
 }
 
 /* Make iframe responsive */
